@@ -99,7 +99,8 @@ app.use(flash());
 
 
 //SERVER CONFIG ==========================================
-app.listen(3000, function(){
+let port = process.env.PORT || 3000;
+app.listen(port, function(){
 	console.log("Serving on port 3000");
 })
 //========================================================
