@@ -1,0 +1,26 @@
+<%- include ("../partials/header") %> 
+<div class="container">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= note.image %>">
+				<div class="caption">
+					<% if(currentUser){ %>
+						<a class="btn btn-xs btn-warning" href="/notes/<%=note._id%>/edit">Edit</a>
+						<form class="deleteForm" action="/notes/<%=note._id%>?_method=DELETE" method="POST">
+							<input class="btn btn-xs btn-danger" value="Delete" type="submit">	
+						</form>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<h4 class="segmentHeading" > <%=note.title%> </h4>
+			<p><%= note.grade %></p>
+			<p><%= note.subject %></p>
+			<a href="<%= note.noteLink %>" >Download</a>
+		</div>
+	</div>
+</div>
+
+<%- include ("../partials/footer") %>

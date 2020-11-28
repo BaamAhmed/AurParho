@@ -1,0 +1,34 @@
+<%- include ("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center; padding-bottom: 25px">
+			Create a new campground
+		</h1>
+		<div style="width: 30%; margin: 0 auto;">
+			<form action="/notes" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="title" name="note[title]">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="image url" name="note[image]">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="grade" name="note[grade]">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="the note link" name="note[noteLink]">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="subject" name="note[subject]">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-md btn-block">Submit!</button>
+				</div>
+			</form>
+			<a href="/campgrounds">View All Campgrounds</a>
+		</div>
+		
+	</div>
+</div>
+
+<%- include ("../partials/footer") %>

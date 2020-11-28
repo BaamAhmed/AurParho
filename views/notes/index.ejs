@@ -1,0 +1,118 @@
+<%- include ("../partials/header") %>
+
+
+<!-- JUMBOTRON -->
+<div class="container mainSegment p-5 pt-0" >
+	<div class="row" >
+		<div class="col-12 d-flex d-xl-none p-0 mb-4 d-flex justify-content-center" >
+			<img src="/images/JumboArt.png" class="jumboPic" calt="">
+		</div>
+		<div class="col-12 col-xl-7 p-0" >
+			<div class="col-12" >
+				<h1 class="segmentHeading" >THESE ARE <span class="emph">NOT</span> YOUR <br>  REGULAR NOTES</h1>	
+			</div>
+			<div class="col-8-sm col-12" >
+				<p class="segmentPara" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+			</div>
+		</div>
+		<div class="col-5 p-0 m-0 d-none d-xl-flex justify-content-end" >
+			<img src="/images/JumboArt.png" class="jumboPic marginManagement" calt="">
+		</div>
+		<div class="col-8-sm col-12 jumboButton" style="margin-top: -30px;" >
+			<a href="#" class="jumboLink p-3 px-4" >BROWSE NOTES</a>
+		</div>
+	</div>
+</div>
+
+<!-- POPULAR NOTES -->
+<div class="container mainSegment p-5">
+	<div class="row d-flex mb-4" >
+		<div class="col-9">
+			<h1 class="segmentHeading" > <span class="emph" >POPULAR</span>  NOTES</h1>
+		</div>
+		<div class="col-3 d-none d-md-block" style="text-align: right;">
+			<a href="#" class="segmentPara" >SEE MORE</a>
+		</div>
+	</div>
+	<div class="row d-flex" >
+		<% notes.forEach(function(note){ %>
+			<div class="col-12 col-lg-6 col-xl">
+				<div class="card mb-3 border-0 bg-transparent">
+					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
+					<div class="card-body px-0 py-2">
+						<a href="/notes/<%= note._id %>" class="card-title"><%= note.title %></a>
+					</div>	
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
+	<div class="row d-flex d-md-none" style="margin-top: -90px;" >
+		<div class="col-8-sm col-12 jumboButton"  >
+			<a href="#" class="jumboLink p-3 px-4" >SEE MORE</a>
+		</div>
+	</div>
+</div>
+
+<div class="container mainSegment p-5 d-flex justify-content-center">
+	<p class="segmentHeading" >AD SPACE</p> 
+</div>
+
+<div class="container mainSegment p-5">
+	<h1 class="segmentHeading mb-4" >Any topics troubling <span class="emph" >you</span>  today?</h1>
+	<div class="row " >
+		<form action="">
+			<input type="text" placeholder="Search for a topic or a sub-topic" class="mainSearch">
+			<input type="submit" class="mainSearchButton">
+		</form>
+	</div>
+</div>
+
+<div class="container mainSegment p-5" >
+	<h1 class="segmentHeading " > Something we may have <span class="emph" >missed</span>? </h1>
+	<p class="segmentPara" >Did you find an error or incorrect information in one of our notes? Maybe you want to request a note? Please tell us by filling in the appropriate form below.</p>
+	<p class="segmentPara mb-5" >Thank you, and sorry for the inconvenience.</p>
+	<div class="d-flex doubleButtons">
+		<div>
+			<a class="jumboLink p-3 mt-5" href="">REPORT ERROR</a>
+		</div>
+		<div >
+			<a class="jumboLink p-3 mx-3 mt-5" href="">REQUEST A NOTE</a>
+		</div>
+	</div>
+	
+</div>
+
+<div class="container mainSegment p-5 d-flex justify-content-center">
+	<p class="segmentHeading" >AD SPACE</p> 
+</div>
+
+
+<!-- 
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to YelpCamp</h1>
+			<p>View out handpicked campgrounds from all over the world.</p>
+			<p><a href="notes/new" class="bnt btn-primary btn-lg">Add New Campground</a></p>
+		</div>
+	</header>
+	<h3>Our Most Popular Campgrounds</h3>
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% notes.forEach(function(note){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img width= "500px" src="<%= note.image %>">
+					<div class="caption">
+					<h4><%= note.title %></h4>	
+					</div>
+					<p>
+						<a href="/notes/<%= note._id %>" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+</div>
+-->
+<%- include ("../partials/footer") %>
