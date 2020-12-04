@@ -1,0 +1,43 @@
+<%- include ("../partials/header") %>
+
+<div class="container mainSegment p-5">
+	<div class="row " >
+		<form action="/notes/browse" method="GET">
+			<input type="text" placeholder="Search for a topic" name="searchTerm" class="mainSearch">
+            <select name="subject" id="">
+                <option value="All">All</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+            </select>
+            <input type="radio" name="grade" id="olevels" value="o levels">
+            <label for="olevels">O Levels</label>
+            <input type="radio" name="grade" id="alevels" value="a levels">
+            <label for="alevels">A Levels</label>
+			<input type="submit" class="mainSearchButton">
+        </form>
+	</div>
+</div>
+
+<div class="container mainSegment p-5">
+
+	<div class="row d-flex" >
+		<% notes.forEach(function(note){ %>
+			<div class="col-3">
+				<div class="card mb-3 border-0 bg-transparent">
+					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
+					<div class="card-body px-0 py-2">
+						<a href="/notes/<%= note._id %>" class="card-title"><%= note.title %></a>
+					</div>	
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
+	<div class="row d-flex d-md-none" style="margin-top: -90px;" >
+		<div class="col-8-sm col-12 jumboButton"  >
+			<a href="#" class="jumboLink p-3 px-4" >SEE MORE</a>
+		</div>
+	</div>
+</div>
+
+<%- include ("../partials/footer") %>

@@ -18,6 +18,37 @@ router.get("/", function(req, res){
 	})
 })
 
+function stringEscape(s) {
+		return s ? s.replace(/\\/g,'').replace(/\{\}/g,'').replace(/\[\]/g,'').replace(/\+/g,'').replace(/\n/g,'').replace(/\t/g,'').replace(/\v/g,'').replace(/'/g,"").replace(/"/g,'').replace(/[\x00-\x1F\x80-\x9F]/g,hex) : s;
+		function hex(c) { var v = '0'+c.charCodeAt(0).toString(16); return '\\x'+v.substr(v.length-2); }
+}
+
+router.get("/browse", function(req, res){
+	let search = req.query.searchTerm;
+	let sanitisedSearch = stringEscape(search);
+	console.log(sanitisedSearch)
+	console.log(req.query.subject)
+	if(req.query.subject === "All" || req.query.subject == undefined){
+		req.query.subject = '';
+	}
+	if(sanitisedSearch == undefined){
+		sanitisedSearch = '';
+	}
+	if(req.query.grade == undefined){
+		req.query.grade = '';
+	}
+	// let regex = new RegExp(escapeRegex(req.query.searchTerm), "i")
+	Note.find({'title': {$regex: sanitisedSearch, $options: 'i'}, 'subject':{$regex: req.query.subject, $options: 'i'}, 'grade':{$regex: req.query.grade, $options: 'i'}}, function(err, allNotes){
+		if(err){
+			console.log("error encountered")
+			console.log(err)
+		} else {
+			res.render("notes/browse", {notes: allNotes})
+		}
+	})
+})
+
+
 //NEW CAMPGROUND FORM
 router.get("/new", middleware.isLoggedIn, function(req, res){
 	res.render("notes/new")

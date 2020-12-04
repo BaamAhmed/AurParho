@@ -61,8 +61,8 @@
 <div class="container mainSegment p-5">
 	<h1 class="segmentHeading mb-4" >Any topics troubling <span class="emph" >you</span>  today?</h1>
 	<div class="row " >
-		<form action="">
-			<input type="text" placeholder="Search for a topic or a sub-topic" class="mainSearch">
+		<form action="/notes/browse" method="GET">
+			<input type="text" placeholder="Search for a topic" name="searchTerm" class="mainSearch">
 			<input type="submit" class="mainSearchButton">
 		</form>
 	</div>
