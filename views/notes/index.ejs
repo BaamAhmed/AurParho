@@ -4,10 +4,10 @@
 <!-- JUMBOTRON -->
 <div class="container mainSegment p-5 pt-0" >
 	<div class="row" >
-		<div class="col-12 d-flex d-xl-none p-0 mb-4 d-flex justify-content-center" >
+		<div class="col-12 d-flex d-lg-none p-0 mb-4 d-flex justify-content-center" >
 			<img src="/images/JumboArt.png" class="jumboPic" calt="">
 		</div>
-		<div class="col-12 col-xl-7 p-0" >
+		<div class="col-12 col-lg-7 p-0" >
 			<div class="col-12" >
 				<h1 class="segmentHeading" >THESE ARE <span class="emph">NOT</span> YOUR <br>  REGULAR NOTES</h1>	
 			</div>
@@ -15,7 +15,7 @@
 				<p class="segmentPara" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
 			</div>
 		</div>
-		<div class="col-5 p-0 m-0 d-none d-xl-flex justify-content-end" >
+		<div class="col-5 p-0 m-0 d-none d-lg-flex justify-content-end" >
 			<img src="/images/JumboArt.png" class="jumboPic marginManagement" calt="">
 		</div>
 		<div class="col-8-sm col-12 jumboButton" style="margin-top: -30px;" >
@@ -36,7 +36,7 @@
 	</div>
 	<div class="row d-flex" >
 		<% notes.forEach(function(note){ %>
-			<div class="col-12 col-lg-6 col-xl">
+			<div class="col-6 col-md">
 				<div class="card mb-3 border-0 bg-transparent">
 					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
 					<div class="card-body px-0 py-2">
@@ -72,7 +72,10 @@
 	<h1 class="segmentHeading " > Something we may have <span class="emph" >missed</span>? </h1>
 	<p class="segmentPara" >Did you find an error or incorrect information in one of our notes? Maybe you want to request a note? Please tell us by filling in the appropriate form below.</p>
 	<p class="segmentPara mb-5" >Thank you, and sorry for the inconvenience.</p>
-	<div class="d-flex doubleButtons">
+
+
+
+	<div class="d-sm-flex d-none doubleButtons">
 		<div>
 			<a class="jumboLink p-3 mt-5" href="">REPORT ERROR</a>
 		</div>

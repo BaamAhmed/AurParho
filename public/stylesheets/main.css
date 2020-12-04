@@ -83,12 +83,12 @@ a {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
 	color: #707070;
-	font-size: 44px;
+	font-size: 40px;
 	text-transform: uppercase;
 }
 
 .segmentPara {
-	font-size: 23px;
+	font-size: 17px;
 	color: #707070;
 }
 
@@ -107,7 +107,8 @@ a {
 	width: 75%;
 	margin: 0;
 	display: flex;
-  	align-items: flex-start; /* new */
+	align-items: flex-start; /* new */
+	height: intrinsic;
 }
 
 body {
@@ -184,20 +185,16 @@ form {
 
 @media (max-width: 1199px){
 	.segmentHeading {
-		font-size: 30px ;
+		font-size: 25px ;
 	}
 	.segmentPara {
-		font-size: 19px !important;
+		font-size: 15px ;
 		margin-bottom: 0%;
 	}
-	.mainSegment {
-		width: 85%;
-	}
-	.jumboButton {
-		display: flex;
-		text-align: center;
-		margin-top: 0% !important;
-	}
+	/* .mainSegment {
+		width: 75%;
+	} */
+
 	.mainSearch {
 		width: 100%;
 	}
@@ -212,20 +209,25 @@ form {
 	
 }
 
-@media (max-width: 767px){
+/* @media (max-width: 767px){
 	.doubleButtons {
-		justify-content: center;
+		justify-content: space-between;
+	}
+} */
+
+@media (max-width: 992px){
+	.jumboButton {
+		display: flex;
+		text-align: center;
+		margin-top: 0% !important;
 	}
 }
 
 @media (max-width: 1350px){
-	.segmentPara {
-		font-size: 17px;
-	}
 	.segmentHeading {
-		font-size: 37px;
+		font-size: 33px;
 	}
 	.mainSearchButton {
-		font-size: 18px;
+		font-size: 14px;
 	}
 }
