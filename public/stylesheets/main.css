@@ -191,9 +191,9 @@ form {
 		font-size: 15px ;
 		margin-bottom: 0%;
 	}
-	/* .mainSegment {
-		width: 75%;
-	} */
+	.mainSegment {
+		width: 85%;
+	}
 
 	.mainSearch {
 		width: 100%;
