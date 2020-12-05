@@ -168,6 +168,28 @@ body {
 	color: white;
 	border: 0;
 }
+.fullwidth {
+	width: 100%;
+}
+.halfwidth{
+	width: 49.5%;
+}
+
+.formText {
+	padding: 10px 30px;
+	background-color: #0A0A0A;
+	border-radius: 18px;
+	color: white;
+	border: 0;
+}
+.formField {
+	padding: 10px 30px;
+	height: 66px;
+	background-color: #0A0A0A;
+	border-radius: 18px;
+	color: white;
+	border: 0;
+}
 
 .filters {
 	background-color: #0C0C0C;
@@ -251,7 +273,10 @@ option {
 	width: 100% !important;
 }
 
-
+.contactForm {
+	text-align: center;
+	width: 45% !important;
+}
 
 @media (max-width: 1199px){
 	.segmentHeading {
@@ -262,7 +287,7 @@ option {
 		margin-bottom: 0%;
 	}
 	.mainSegment {
-		width: 90%;
+		width: 90% !important;
 	}
 
 	.mainSearch {
@@ -275,6 +300,9 @@ option {
 	}
 	form {
 		display: block;
+	}
+	.halfwidth {
+		width: 100%;
 	}
 	
 }
@@ -291,6 +319,7 @@ option {
 		text-align: center;
 		margin-top: 0% !important;
 	}
+	
 }
 
 @media (max-width: 1350px){

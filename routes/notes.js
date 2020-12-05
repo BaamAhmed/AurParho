@@ -23,6 +23,10 @@ function stringEscape(s) {
 		function hex(c) { var v = '0'+c.charCodeAt(0).toString(16); return '\\x'+v.substr(v.length-2); }
 }
 
+router.get("/contactus", function(req, res) {
+	res.render("notes/contactform")
+})
+
 router.get("/browse", function(req, res){
 	let search = req.query.searchTerm;
 	let sanitisedSearch = stringEscape(search);
