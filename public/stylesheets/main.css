@@ -142,7 +142,7 @@ body {
 }
 
 
-form {
+#searchSecondary {
 	margin: 0 10px;
 	padding: 0;
 	width: 100%;
@@ -151,7 +151,48 @@ form {
 	justify-content: center;
 }
 
+#searchMain {
+	/* margin: 0 10px; */
+	padding: 0;
+	width: 100%;
+	/* background-color: black; */
+	justify-content: center;
+}
+
 .mainSearch {
+	width: 100%;
+	padding: 10px 30px;
+	height: 66px;
+	background-color: #0A0A0A;
+	border-radius: 18px;
+	color: white;
+	border: 0;
+}
+
+.filters {
+	background-color: #0C0C0C;
+	border-radius: 18px;
+}
+
+.label, label {
+	color: grey;
+}
+
+
+.subjectSelect{
+	background-color: #090909;
+	border: 0;
+	color: grey;
+	border-radius: 18px;
+}
+
+option {
+	border: 0;
+	background-color: #090909;
+	border-radius: 18px;
+}
+
+.notMainSearch {
 	margin-right: 5px !important;
 	width: 84%;
 	padding: 10px 30px;
@@ -163,12 +204,25 @@ form {
 	color: white;
 }
 
-.mainSearchButton {
+.notMainSearchButton {
 	margin-left: 5px !important;
 	width: 15%;
 	margin: 0;
 	background-color: #E3BE29;
 	border-radius: 23px;
+	border: 0;
+	font-weight: 700;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+.mainSearchButton {
+	/* margin-left: 5px !important; */
+	margin: 0 0;
+	width: 100%;
+	height: 66px;
+	padding: 10px 0;
+	background-color: #E3BE29;
+	border-radius: 18px;
 	border: 0;
 	font-weight: 700;
 	font-size: 22px;
@@ -214,7 +268,7 @@ form {
 	.mainSearch {
 		width: 100%;
 	}
-	.mainSearchButton {
+	.notMainSearchButton {
 		margin-top: 20px;
 		padding: 15px 10px;
 		width: 100%;

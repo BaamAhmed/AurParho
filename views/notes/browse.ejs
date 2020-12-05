@@ -1,28 +1,46 @@
 <%- include ("../partials/header") %>
 
 <div class="container mainSegment p-5">
-	<div class="row " >
-		<form action="/notes/browse" method="GET">
-			<input type="text" placeholder="Search for a topic" name="searchTerm" class="mainSearch">
-            <select name="subject" id="">
-                <option value="All">All</option>
-                <option value="Physics">Physics</option>
-                <option value="Chemistry">Chemistry</option>
-            </select>
-            <input type="radio" name="grade" id="olevels" value="o levels">
-            <label for="olevels">O Levels</label>
-            <input type="radio" name="grade" id="alevels" value="a levels">
-            <label for="alevels">A Levels</label>
-			<input type="submit" class="mainSearchButton">
-        </form>
-	</div>
-</div>
+	<form id="searchMain" action="/notes/browse" method="GET">
+        <div class="row d-flex justify-contents-start mx-0 mb-2 p-0" >
+            <div class="col-12 col-sm-9 p-2" >
+                <input type="text" placeholder="Search for a topic" name="searchTerm" class="m-0 mainSearch">
+            </div>
+            <div class="col-12 col-sm-3 p-2" >
+                <input type="submit" class="mainSearchButton">
+            </div>
+        </div>
 
+        <div class="row p-2 mx-1 filters">
+            <div class="col-lg-5 col-12 p-4">
+                        <label for="subject" class="mr-4" >Subject</label>
+                        <select class="subjectSelect p-3 m-0" name="subject" id="subject">
+                            <option value="All">All</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Economics">Economics</option>
+                            <option value="Accounts">Accounts</option>
+                            <option value="PakGeo">Pakistan Geography</option>
+                            <option value="PakHis">Pakistan History</option>
+                            <option value="CompSci">Computer Science</option>
+                        </select>
+            </div>
+            <div class="col-lg-5 col-12 p-4 mt-2 align-content-center">
+                <span class="label mr-4" >Grade:</span>
+                <input type="radio" name="grade" id="olevels" value="o levels">
+                <label for="olevels" class="mr-3" >O Levels</label>
+                <input type="radio" name="grade" id="alevels" value="a levels">
+                <label for="alevels">A Levels</label>
+            </div>
+    </form>
+</div>
+</div>
 <div class="container mainSegment p-5">
 
 	<div class="row d-flex" >
 		<% notes.forEach(function(note){ %>
-			<div class="col-6 col-3-md">
+			<div class="col-4 col-3-md">
 				<div class="card mb-3 border-0 bg-transparent">
 					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
 					<div class="card-body px-0 py-2">
