@@ -123,7 +123,7 @@ router.post("/:id/edit", middleware.isLoggedIn , function(req, res){
 	})
 })
 
-router.delete("/:id", middleware.checkNoteOwnership, function(req, res){
+router.delete("/:id", middleware.isLoggedIn, function(req, res){
 	Note.findByIdAndRemove(req.params.id, function(err){
 		if(err){
 			console.log("The following error was encountered: " + err)

@@ -35,16 +35,18 @@
 		</div>
 	</div>
 	<div class="row d-flex" >
-		<% notes.forEach(function(note){ %>
-			<div class="col-6 col-md">
+
+		<% for(let i = 0; i < 4; i++){ %>
+			<div class="col-6 col-md-3">
 				<div class="card mb-3 border-0 bg-transparent">
-					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
+					<img src="<%= notes[i].image %>" class="card-img-top" alt="...">
 					<div class="card-body px-0 py-2">
-						<a href="/notes/<%= note._id %>" class="card-title"><%= note.title %></a>
+						<a href="/notes/<%= notes[i]._id %>" class="card-title"><%= notes[i].title %></a>
 					</div>	
 				</div>
-			</div>
-		<% }) %>
+			</div>	
+		<% } %>
+		
 	</div>
 
 	<div class="row d-flex d-md-none" style="margin-top: -90px;" >

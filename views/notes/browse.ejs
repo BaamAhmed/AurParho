@@ -44,7 +44,7 @@
 		<% notes.forEach(function(note){ %>
 			<div class="col-6 col-sm-4 col-md-3">
 				<div class="card mb-3 border-0 bg-transparent">
-					<img src="<%= notes[0].image %>" class="card-img-top" alt="...">
+					<img src="<%= note.image %>" class="card-img-top" alt="...">
 					<div class="card-body px-0 py-2">
 						<a href="/notes/<%= note._id %>" class="card-title"><%= note.title %></a>
 					</div>	
