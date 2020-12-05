@@ -1,0 +1,34 @@
+<%- include ("../partials/header") %>
+
+<div class="container mainSegment contactForm p-4 p-sm-5" >
+    <h1 class="segmentHeading " > <span class="emph" >request a note</span> </h1>
+    <p class="segmentPara" > Didn't find what you were looking for? <span class="emph">Don't worry. </span>Just fill the form below and we'll add it in no time!</p>
+
+    <form action="https://mailthis.to/livbassam@gmail.com" method="POST">
+        <input required type="emial" name="email" placeholder="Your email address here" class="formField mb-2 fullwidth">
+        <input required type="text" name="suggestedNoteTitle" placeholder="Title of Requested Note" class="formField mb-2 halfwidth">
+        <input  type="text" name="SuggestedNoteGrade" placeholder="Grade Level (eg. O Levels...)" class="formField halfwidth mb-2">
+        <input  type="text" name="SuggestedNoteTopic" placeholder="Topic (if any)" class="formField halfwidth mb-4">
+        <select required class="subjectSelect p-3 formField halfwidth mb-4" name="subject" id="subject">
+                            <option value="All">All</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Economics">Economics</option>
+                            <option value="Accounts">Accounts</option>
+                            <option value="PakGeo">Pakistan Geography</option>
+                            <option value="PakHis">Pakistan History</option>
+                            <option value="CompSci">Computer Science</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Psych">Psychology</option>
+                            <option value="Socio">Sociology</option>
+                        </select>
+        <input type="submit" value="SUBMIT" style="text-align: center;" class="mainSearchButton">
+    </form>
+
+</div>
+
+<div class="container mainSegment p-5 d-flex justify-content-center">
+	<p class="segmentHeading" >AD SPACE</p> 
+</div>
+<%- include ("../partials/footer") %>

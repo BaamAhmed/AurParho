@@ -26,6 +26,9 @@ function stringEscape(s) {
 router.get("/contactus", function(req, res) {
 	res.render("notes/contactform")
 })
+router.get("/requestnote", function(req, res) {
+	res.render("notes/requestnote")
+})
 
 router.get("/browse", function(req, res){
 	let search = req.query.searchTerm;
