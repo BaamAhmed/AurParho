@@ -293,6 +293,9 @@ option {
 	.mainSearch {
 		width: 100%;
 	}
+	.notMainSearch {
+		width: 100%;
+	}
 	.notMainSearchButton {
 		margin-top: 20px;
 		padding: 15px 10px;
