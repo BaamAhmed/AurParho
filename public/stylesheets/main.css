@@ -326,7 +326,7 @@ option {
 	.segmentHeading {
 		font-size: 33px;
 	}
-	.mainSearchButton {
+	.notMainSearchButton {
 		font-size: 14px;
 	}
 }
