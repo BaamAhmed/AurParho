@@ -278,6 +278,12 @@ option {
 	width: 45% !important;
 }
 
+.tag {
+	background-color: #090909;
+	font-size: 13px;
+	border-radius: 20px;
+}
+
 @media (max-width: 1199px){
 	.segmentHeading {
 		font-size: 25px ;

@@ -30,9 +30,9 @@
             </div>
             <div class="col-lg-5 col-12 p-4 mt-2 align-content-center">
                 <span class="label mr-4" >Grade:</span>
-                <input type="radio" name="grade" id="olevels" value="o levels">
+                <input type="radio" name="grade" id="olevels" value="olevels">
                 <label for="olevels" class="mr-3" >O Levels</label>
-                <input type="radio" name="grade" id="alevels" value="a levels">
+                <input type="radio" name="grade" id="alevels" value="alevels">
                 <label for="alevels">A Levels</label>
             </div>
     </form>
@@ -42,12 +42,16 @@
 
 	<div class="row d-flex" >
 		<% notes.forEach(function(note){ %>
-			<div class="col-6 col-sm-4 col-md-3">
+			<div class="col-6 col-md-4 col-lg-3">
 				<div class="card mb-3 border-0 bg-transparent">
 					<img src="<%= note.image %>" class="card-img-top" alt="...">
-					<div class="card-body px-0 py-2">
-						<a href="/notes/<%= note._id %>" class="card-title"><%= note.title %></a>
-					</div>	
+					<div class="card-body px-0 py-2 ">
+						<a href="/notes/<%= note._id %>" class="card-title mb-5"><%= note.title %></a>
+                        <div class="mt-2 p-0">
+                            <a class="tag p-2 px-3" href=""><%= note.subject %></a>                        
+                            <a class="tag p-2 px-3" href=""><%= note.grade %></a>                        
+                        </div>
+                    </div>
 				</div>
 			</div>
 		<% }) %>
