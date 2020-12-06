@@ -48,8 +48,8 @@
 					<div class="card-body px-0 py-2 ">
 						<a href="/notes/<%= note._id %>" class="card-title mb-5"><%= note.title %></a>
                         <div class="mt-2 p-0">
-                            <a class="tag p-2 px-3" href=""><%= note.subject %></a>                        
-                            <a class="tag p-2 px-3" href=""><%= note.grade %></a>                        
+                            <a class="tag p-2 px-3" href="/notes/browse?subject=<%=note.subject%>"><%= note.subject %></a>                        
+                            <a class="tag p-2 px-3" href="/notes/browse?grade=<%=note.grade%>"><%= note.grade %></a>                        
                         </div>
                     </div>
 				</div>
