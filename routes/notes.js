@@ -33,8 +33,8 @@ router.get("/requestnote", function(req, res) {
 router.get("/browse", function(req, res){
 	let search = req.query.searchTerm;
 	let sanitisedSearch = stringEscape(search);
-	console.log(sanitisedSearch)
-	console.log(req.query.subject)
+	// console.log(sanitisedSearch)
+	// console.log(req.query.subject)
 	if(req.query.subject === "All" || req.query.subject == undefined){
 		req.query.subject = '';
 	}

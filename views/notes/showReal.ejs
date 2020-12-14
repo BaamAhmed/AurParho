@@ -1,26 +1,39 @@
 <%- include ("../partials/header") %> 
-<div class="container">
-	<div class="row">
-		<div class="col-md-5">
-			<div class="thumbnail">
-				<img class="img-responsive" src="<%= note.image %>">
-				<div class="caption">
-					<% if(currentUser){ %>
-						<a class="btn btn-xs btn-warning" href="/notes/<%=note._id%>/edit">Edit</a>
-						<form class="deleteForm" action="/notes/<%=note._id%>?_method=DELETE" method="POST">
-							<input class="btn btn-xs btn-danger" value="Delete" type="submit">	
-						</form>
-					<% } %>
-				</div>
+
+<div class="container mainSegment p-5 d-flex justify-content-center">
+	<p class="segmentHeading" >AD SPACE</p> 
+</div>
+
+<div class="container mainSegment p-md-4 p-lg-5 p-3">
+	<div class="row px-4 mb-4">
+		<a href="/notes/browse" class="emph">< Back to Browse</a>
+	</div>
+	<div class="row mb-3">
+		<div class="col-md-5 mb-4 col-12">
+			<div class="thumbnail" style="height: 100%;">
+				<img class="card-img-top" style="border-radius: 23px; height: 100%;" src="<%= note.image %>">
 			</div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-7 flex-column col-12">
 			<h4 class="segmentHeading" > <%=note.title%> </h4>
-			<p><%= note.grade %></p>
-			<p><%= note.subject %></p>
-			<a href="<%= note.noteLink %>" >Download</a>
+			<p class="segmentPara">This note is from <span class="emph"><%= note.grade %></span>, and is filed under <span class="emph"><%= note.subject %></span> </p>
+			<p class="segmentPara">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
+			<a class="mt-4 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" >Download</a>
 		</div>
 	</div>
+	<div class="row px-3 align-content-center">
+		<p class="segmentPara">Didn't find what you were looking for? Request a note <a href="/notes/contactus" class="emph">here</a>.</p>
+		<p class="segmentPara">Did you find something wrong in this note? (Oops) No worries, report it to us <a href="/notes/requestform" class="emph">here</a> and we'll have it fixed in no time. </p>
+	</div>
 </div>
+			<% if(currentUser){ %>
+				<a class="btn btn-xs btn-warning" href="/notes/<%=note._id%>/edit">Edit</a>
+				<form class="deleteForm" action="/notes/<%=note._id%>?_method=DELETE" method="POST">
+					<input class="btn btn-xs btn-danger" value="Delete" type="submit">	
+				</form>
+			<% } %>
+
+			
+
 
 <%- include ("../partials/footer") %>

@@ -6,7 +6,7 @@ let express = require("express"),
 
 
 router.get("/", function(req,res){
-	res.render("landing")
+	res.redirect("notes")
 })
 
 router.get("/register", function(req, res){
