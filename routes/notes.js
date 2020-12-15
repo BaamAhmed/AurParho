@@ -100,7 +100,13 @@ router.get("/:id", function(req, res){
 					console.log("BRo error: ", err)
 					res.redirect("/");
 				} else {
-					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes})
+					if(relatedNotes.length > 4)
+					{
+						let n = 4
+					} else {
+						let n = relatedNotes.length
+					}
+					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n})
 				}
 			})
 		} 
