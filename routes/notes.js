@@ -93,18 +93,26 @@ router.get("/:id", function(req, res){
 			console.log("error encountered")
 		} else {
 			// console.log(foundCampground)
-			Note.find({'subject': foundNote.subject, 'grade': foundNote.grade}, function(err, relatedNotes)
+			let splitting = foundNote.title.split(":")
+			let topic;
+			if(splitting.length > 1) {
+				topic = splitting[1].trim()
+			} else {
+				topic = "";
+			}
+			Note.find({'title': {$regex: topic, $options: 'i'},'subject': foundNote.subject, 'grade': foundNote.grade}, function(err, relatedNotes)
 			{
 				if(err)
 				{
 					console.log("BRo error: ", err)
 					res.redirect("/");
 				} else {
+					let n;
 					if(relatedNotes.length > 4)
 					{
-						let n = 4
+						n = 4
 					} else {
-						let n = relatedNotes.length
+						n = relatedNotes.length
 					}
 					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n})
 				}
