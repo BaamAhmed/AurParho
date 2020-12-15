@@ -48,6 +48,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
+
 //=======================================================
 
 
@@ -88,6 +89,10 @@ app.use(flash());
 	app.use(authRoutes);
 	app.use("/notes", noteRoutes);
 	// app.use("/campgrounds/:id/comments", commentRoutes)
+	app.use(function(req, res, next){
+		res.status(404);
+		res.render("notFound");
+	  });
 	//===================================================
 
 //========================================================

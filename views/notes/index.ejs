@@ -28,7 +28,7 @@
 <div class="container mainSegment p-5">
 	<div class="row d-flex mb-4" >
 		<div class="col-9">
-			<h1 class="segmentHeading" > <span class="emph" >POPULAR</span>  NOTES</h1>
+			<h1 class="segmentHeading" > <span class="emph" >RECENTLY</span>  UPLOADED</h1>
 		</div>
 		<div class="col-3 d-none d-md-block" style="text-align: right;">
 			<a href="/notes/browse" class="segmentPara" >SEE MORE</a>
@@ -36,12 +36,12 @@
 	</div>
 	<div class="row d-flex" >
 
-		<% for(let i = 0; i < 4; i++){ %>
+		<% for(let i = notes.length-1; i > notes.length-5; i--){ %>
 			<div class="col-6 col-md-3">
 				<div class="card mb-3 border-0 bg-transparent">
 					<img src="<%= notes[i].image %>" class="card-img-top" alt="...">
 					<div class="card-body px-0 py-2">
-						<a href="/notes/<%= notes[i]._id %>" class="card-title"><%= notes[i].title %></a>
+						<a href="/notes/<%= notes[i]._id %>" class="card-title truncate"><%= notes[i].title %></a>
 					</div>	
 				</div>
 			</div>	
@@ -56,9 +56,6 @@
 	</div>
 </div>
 
-<div class="container mainSegment p-5 d-flex justify-content-center">
-	<p class="segmentHeading" >AD SPACE</p> 
-</div>
 
 <div class="container mainSegment p-5">
 	<h1 class="segmentHeading mb-4" >Any topics troubling <span class="emph" >you</span>  today?</h1>
@@ -92,10 +89,6 @@
 		</div>
 	</div>
 	
-</div>
-
-<div class="container mainSegment p-5 d-flex justify-content-center">
-	<p class="segmentHeading" >AD SPACE</p> 
 </div>
 
 

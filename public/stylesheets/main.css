@@ -1,3 +1,16 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+footer {
+    position: absolute;
+	left: 0;
+    bottom: -10;
+    height: 100px;
+    width: 100%;
+}
+
 .thumbnail img {
 	width: 100%;
 	border-radius: 8px;
@@ -111,7 +124,16 @@ a {
 	width: 100%;
 }
 
-
+.notFoundButton {
+	background-color: #E3BE29;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
+	border-radius: 15px;
+	width: 100%;
+	text-transform: uppercase;
+}
 .jumboPic {
 	width: 75%;
 	margin: 0;
@@ -292,6 +314,14 @@ option {
 	background-color: #090909;
 	font-size: 13px;
 	border-radius: 20px;
+}
+
+.truncate {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+
 }
 
 @media (max-width: 1199px){

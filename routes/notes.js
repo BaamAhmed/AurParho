@@ -93,7 +93,16 @@ router.get("/:id", function(req, res){
 			console.log("error encountered")
 		} else {
 			// console.log(foundCampground)
-			res.render("notes/showReal", {note: foundNote})
+			Note.find({'subject': foundNote.subject, 'grade': foundNote.grade}, function(err, relatedNotes)
+			{
+				if(err)
+				{
+					console.log("BRo error: ", err)
+					res.redirect("/");
+				} else {
+					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes})
+				}
+			})
 		} 
 	})
 	
