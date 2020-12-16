@@ -9,7 +9,7 @@
                 <input type="text" placeholder="Search for a topic" name="searchTerm" class="m-0 mainSearch">
             </div>
             <div class="col-12 col-sm-3 p-2" >
-                <input type="submit" class="mainSearchButton">
+                <input type="submit" value="search" class="mainSearchButton">
             </div>
         </div>
 
@@ -40,6 +40,15 @@
 </div>
 <div class="container mainSegment p-3 p-sm-5">
 
+    <% if(resultsFor == '') { %>
+        <h1 style="text-align: center;" class="segmentHeading mb-4">All Notes</h1>
+    <% } else { %>
+        <% if (notes.length < 1) { %>
+            <h1 style="text-align: center;" class="segmentHeading">Welp! No results found</h1>
+        <% } else { %>
+            <h1 style="text-align: center;" class="segmentHeading mb-4">Results for: <%= resultsFor %></h1>
+        <% } %>
+    <% } %>
 	<div class="row d-flex" >
 		<% notes.forEach(function(note){ %>
 			<div class="col-6 col-md-4 col-lg-3">

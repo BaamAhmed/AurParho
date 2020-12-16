@@ -50,7 +50,7 @@ router.get("/browse", function(req, res){
 			console.log("error encountered")
 			console.log(err)
 		} else {
-			res.render("notes/browse", {notes: allNotes})
+			res.render("notes/browse", {notes: allNotes, resultsFor: sanitisedSearch})
 		}
 	})
 })
