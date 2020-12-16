@@ -11,6 +11,9 @@ footer {
     width: 100%;
 }
 
+em {
+	text-emphasis: italic;
+}
 .thumbnail img {
 	width: 100%;
 	border-radius: 8px;

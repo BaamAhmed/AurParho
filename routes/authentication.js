@@ -35,6 +35,10 @@ router.get("/superSpecialLogin", function(req, res){
 	res.render("login")
 })
 
+router.get("/about", function(req, res){
+	res.render("about")
+})
+
 router.post("/login", passport.authenticate("local", 
 	{
 		successRedirect: "/notes",
