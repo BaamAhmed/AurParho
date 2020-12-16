@@ -41,14 +41,18 @@
 	<div class="row d-flex">
 
 		<% for(let i = 0; i < relatedNotes.length; i++){ %>
-			<div class="col-6 col-md-3">
-				<div class="card mb-3 border-0 bg-transparent">
-					<img src="<%= relatedNotes[i].image %>" class="card-img-top" alt="...">
-					<div class="card-body px-0 py-2">
-						<a href="/notes/<%= relatedNotes[i]._id %>" class="card-title truncate"><%= relatedNotes[i].title %></a>
-					</div>	
-				</div>
-			</div>	
+			<% if (relatedNotes[i].id != note.id && relatedNotes.length > 1){ %>
+				<div class="col-6 col-md-3">
+					<div class="card mb-3 border-0 bg-transparent">
+						<img src="<%= relatedNotes[i].image %>" class="card-img-top" alt="...">
+						<div class="card-body px-0 py-2">
+							<a href="/notes/<%= relatedNotes[i]._id %>" class="card-title truncate"><%= relatedNotes[i].title %></a>
+						</div>	
+					</div>
+				</div>	
+			<% } else { %>
+				<p class="segmentPara w-100" style="text-align: center;">NO RELATED NOTES :(</p>
+			<% } %>
 		<% } %>
 		
 	</div>
