@@ -100,7 +100,7 @@ router.get("/:id", function(req, res){
 			} else {
 				topic = "";
 			}
-			Note.find({'title': {$regex: topic, $options: 'i'},'subject': foundNote.subject, 'grade': foundNote.grade}, function(err, relatedNotes)
+			Note.find({'title': {$regex: topic, $options: 'i'},'subject': foundNote.subject}, function(err, relatedNotes)
 			{
 				if(err)
 				{

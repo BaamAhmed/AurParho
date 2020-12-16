@@ -316,6 +316,10 @@ option {
 	border-radius: 20px;
 }
 
+.carousel-item img {
+	border-radius: 17px;
+	margin: 16px 0;
+}
 .truncate {
 	overflow: hidden;
 	display: -webkit-box;
