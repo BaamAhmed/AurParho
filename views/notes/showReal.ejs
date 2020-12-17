@@ -15,6 +15,11 @@
 		<div class="col-md-7 flex-column col-12">
 			<h4 class="segmentHeading" > <%=note.title%> </h4>
 			<p class="segmentPara"><em>This note is from <span class="emph"><%= note.grade %></span>, and is filed under <span class="emph"><%= note.subject %></em></span> </p>
+			<% if (note.contributor != undefined){ %>
+				<p class="segmentPara"><em>Contributed by: <span class="emph"><%= note.contributor %></span></em></span></p>
+				
+			<% } %>
+			
 			<p class="segmentPara mt-3">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
 			<a class="mt-4 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
 		</div>

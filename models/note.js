@@ -6,6 +6,7 @@ let noteSchema = new mongoose.Schema({
     grade: String,
     noteLink: String,
     image: String,
+    contributor: String,
     poster: {
         _id: {
             type: mongoose.Schema.Types.ObjectId,
