@@ -19,7 +19,7 @@
 				<h4 class="segmentHeading" > <span class="emph"><%= specialTitle[0] %></span></h4>
 			<% } %>
 			<p class="segmentPara"><em>This note is from <span class="emph"><%= note.grade %></span>, and is filed under <span class="emph"><%= note.subject %></em></span> </p>
-			<% if (note.contributor != undefined){ %>
+			<% if (note.contributor != undefined && note.contributor != ""){ %>
 				<p class="segmentPara"><em>Contributed by: <span class="emph"><%= note.contributor %></span></em></span></p>
 				
 			<% } %>
