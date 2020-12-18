@@ -13,7 +13,11 @@
 			</div>
 		</div>
 		<div class="col-md-7 flex-column col-12">
-			<h4 class="segmentHeading" > <%=note.title%> </h4>
+			<% if(specialTitle.length > 1) { %>
+				<h4 class="segmentHeading" > <span class="emph"><%= specialTitle[0] %>:</span> <%=specialTitle[1]%> </h4>
+			<% } else { %>
+				<h4 class="segmentHeading" > <span class="emph"><%= specialTitle[0] %></span></h4>
+			<% } %>
 			<p class="segmentPara"><em>This note is from <span class="emph"><%= note.grade %></span>, and is filed under <span class="emph"><%= note.subject %></em></span> </p>
 			<% if (note.contributor != undefined){ %>
 				<p class="segmentPara"><em>Contributed by: <span class="emph"><%= note.contributor %></span></em></span></p>

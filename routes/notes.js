@@ -94,9 +94,11 @@ router.get("/:id", function(req, res){
 		} else {
 			// console.log(foundCampground)
 			let splitting = foundNote.title.split(":")
+			let specialTitle = foundNote.title.split(":");
 			let topic;
 			if(splitting.length > 1) {
 				topic = splitting[1].trim()
+				specialTitle[1] = specialTitle[1].trim()
 			} else {
 				topic = "";
 			}
@@ -114,7 +116,7 @@ router.get("/:id", function(req, res){
 					} else {
 						n = relatedNotes.length
 					}
-					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n})
+					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n, specialTitle: specialTitle})
 				}
 			})
 		} 
