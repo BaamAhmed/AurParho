@@ -308,6 +308,27 @@ option {
 	margin-top: 22% !important;
 }
 
+.videoButton {
+	background-color: #ed3e32;
+	border-radius: 23px;
+	font-size: 22px;
+	font-weight: 700;
+	color: black;
+	text-transform: uppercase;
+	margin-top: 22% !important;
+}
+
+.video{
+	color: #ed3e32;
+
+}
+a img{
+	transition-duration: 0.5s;
+
+}
+a img:hover {
+	transform: scale(0.8);
+}
 .contactForm {
 	text-align: center;
 	width: 45% !important;

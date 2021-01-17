@@ -1,33 +1,40 @@
 <%- include ("../partials/header") %>
-
-
-<!-- JUMBOTRON -->
-<div class="mainSegment container p3">
-	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner">
-		<div class="carousel-item active">
-			<img src="https://i.ibb.co/mDF4FK6/Artboard-3.jpg" class="d-block w-100" alt="...">
+<div style="border: 4px solid #E3BE29" class="mainSegment p-5 container">
+	<h1 style="text-align: center;" class="segmentHeading">Welcome to <span class="emph">AurParho</span></h1>
+</div>
+<div class="container mainSegment p-5 pt-0" >
+	<div class="row" >
+		<div class="col-12 d-flex d-md-none p-0 mb-4 d-flex justify-content-center" >
+			<img src="https://i.ibb.co/JkSY89v/Artboard-4.png" class="jumboPic" calt="">
 		</div>
-		<div class="carousel-item">
-			<img src="https://i.ibb.co/SXy92G6/IMG-0156.jpg" class="d-block w-100" alt="...">
+		<div class="col-12 col-md-7 p-0" >
+			<div class="col-12" >
+				<h1 class="segmentHeading" >Introducing <span class="video" >Video Explanations</span></h1>	
+			</div>
+			<div class="col-8-sm col-12" >
+				<p class="segmentPara" >Because sometimes, even pretty notes aren't enough. These videos, oriented specifically to people utilizing the notes on this website, will provide a <span class="video"> more engaging and comprehensive experience. </span></p>
+				<p class="segmentPara" >Notes with video explanations have <span class="video"> red borders</span>, and the video link can be found below the download link. Alternatively, you could browse our <span class="video"> YouTube channel.</span></p>
+			</div>
 		</div>
-		<div class="carousel-item">
-			<img src="https://i.ibb.co/Jyg93Ff/IMG-0160.jpg" class="d-block w-100" alt="...">
+		<div class="col-5 p-0 m-0 d-none d-md-flex justify-content-end" >
+			<img src="https://i.ibb.co/JkSY89v/Artboard-4.png" class="jumboPic marginManagement my-5" calt="">
 		</div>
-		<div class="carousel-item">
-			<img src="https://i.ibb.co/phmvfyr/IMG-0158.jpg" class="d-block w-100" alt="...">
+		<div class="col-8-sm col-12 jumboButton" style="margin-top: -30px;" >
+			<a href="https://www.youtube.com/channel/UCMNt3OYNFe-bYcCT_a1g86w" style="background-color: #ed3e32;" class="jumboLink p-3 px-4" >BROWSE CHANNEL</a>
 		</div>
-	</div>
-	<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a>
 	</div>
 </div>
+<div class="container mainSegment p-5">
+	<h1 class="segmentHeading">What's new in <span class="emph">v1.2</span>:</h1>
+	<ul class="segmentPara">
+		<li>Introduced linked video explanations for particular notes and many more coming soon</li>
+		<li>Added ability to click on note thumbnail instead of having to click on only the name</li>
+		<li>Removed jumbotron slider, in favor of a static "Welcome to AurParho" message</li>
+		<li>Notes on browse page are now sorted from most recent to oldest uploads</li>
+	</ul>
+</div>
+<!-- JUMBOTRON -->
+
 <div class="container mainSegment p-5 pt-0" >
 	<div class="row" >
 		<div class="col-12 d-flex d-md-none p-0 mb-4 d-flex justify-content-center" >
@@ -65,7 +72,15 @@
 		<% for(let i = notes.length-1; i > notes.length-5; i--){ %>
 			<div class="col-6 col-md-3">
 				<div class="card mb-3 border-0 bg-transparent">
-					<img src="<%= notes[i].image %>" class="card-img-top" alt="...">
+					<% if (notes[i].videoLink != undefined && notes[i].videoLink != ""){ %>
+						<a href="/notes/<%= notes[i]._id %>">
+							<img src="<%= notes[i].image %>" style="border-color: #d91a1a !important; border-width: 4px;" class="card-img-top" alt="...">
+						</a>
+                    <% } else { %>
+						<a href="/notes/<%= notes[i]._id %>">
+							<img src="<%= notes[i].image %>" class="card-img-top" alt="...">
+						</a>
+                    <% } %>
 					<div class="card-body px-0 py-2">
 						<a href="/notes/<%= notes[i]._id %>" class="card-title truncate"><%= notes[i].title %></a>
 					</div>	

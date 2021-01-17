@@ -53,20 +53,28 @@
         <% } %>
     <% } %>
 	<div class="row d-flex" >
-		<% notes.forEach(function(note){ %>
+        <% for(let i = notes.length - 1; i > -1; i--){ %>
 			<div class="col-6 col-md-4 col-lg-3">
 				<div class="card mb-3 border-0 bg-transparent">
-					<img src="<%= note.image %>" class="card-img-top" alt="...">
+                    <% if (notes[i].videoLink != undefined && notes[i].videoLink != ""){ %>
+                    <a href="/notes/<%= notes[i]._id %>">
+					    <img src="<%= notes[i].image %>" style="border-color: #d91a1a !important; border-width: 4px;" class="card-img-top" alt="...">
+                    </a>
+                    <% } else { %>
+                    <a href="/notes/<%= notes[i]._id %>">
+					    <img src="<%= notes[i].image %>" href="/notes/<%= notes[i]._id %>" class="card-img-top" alt="...">
+                    </a>
+                    <% } %>
 					<div class="card-body px-0 py-2 ">
-						<a href="/notes/<%= note._id %>" class="card-title mb-2 truncate"><%= note.title %></a>
+						<a href="/notes/<%= notes[i]._id %>" class="card-title mb-2 truncate"><%= notes[i].title %></a>
                         <div class="mt-2 p-0">
-                            <a class="tag p-2 px-3" href="/notes/browse?subject=<%=note.subject%>"><%= note.subject %></a>                        
-                            <a class="tag p-2 px-3" href="/notes/browse?grade=<%=note.grade%>"><%= note.grade %></a>                        
+                            <a class="tag p-2 px-3" href="/notes/browse?subject=<%=notes[i].subject%>"><%= notes[i].subject %></a>                        
+                            <a class="tag p-2 px-3" href="/notes/browse?grade=<%=notes[i].grade%>"><%= notes[i].grade %></a>                        
                         </div>
                     </div>
 				</div>
 			</div>
-		<% }) %>
+		<% } %>
 	</div>
 
 </div>

@@ -25,7 +25,10 @@
 			<% } %>
 			
 			<p class="segmentPara mt-3">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
-			<a class="mt-4 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
+			<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
+			<% if (note.videoLink != undefined && note.videoLink != ""){ %>
+				<a style="margin-top: 25px !important;" class="m-0 videoButton p-4 d-flex justify-content-center" href="<%= note.videoLink %>" target="_blank" rel="noopener noreferrer">Video explanation</a>
+			<% } %>
 		</div>
 	</div>
 	<div class="row px-3 align-content-center">
@@ -55,7 +58,15 @@
 			<% if (relatedNotes[i].id != note.id && relatedNotes.length > 1){ %>
 				<div class="col-6 col-md-3">
 					<div class="card mb-3 border-0 bg-transparent">
-						<img src="<%= relatedNotes[i].image %>" class="card-img-top" alt="...">
+						<% if (relatedNotes[i].videoLink != undefined && relatedNotes[i].videoLink != ""){ %>
+						<a href="/notes/<%= relatedNotes[i]._id %>">
+							<img src="<%= relatedNotes[i].image %>" style="border-color: #d91a1a !important; border-width: 4px;" class="card-img-top" alt="...">
+						</a>
+						<% } else { %>
+						<a href="/notes/<%= relatedNotes[i]._id %>">
+							<img src="<%= relatedNotes[i].image %>" class="card-img-top" alt="...">
+						</a>
+						<% } %>
 						<div class="card-body px-0 py-2">
 							<a href="/notes/<%= relatedNotes[i]._id %>" class="card-title truncate"><%= relatedNotes[i].title %></a>
 						</div>	

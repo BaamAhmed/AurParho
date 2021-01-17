@@ -132,7 +132,14 @@ router.get("/:id/edit", middleware.isLoggedIn, function(req, res){
 		if(err){
 			console.log("The following error was encountered: "+ err)
 		} else {
-			res.render("notes/edit", {note: foundNote})
+			if (foundNote.videoLink != undefined && foundNote.videoLink != "")
+			{
+				let videoLinkBool = true
+				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool})
+			} else {
+				let videoLinkBool = false
+				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool})
+			}
 		}
 	})
 })
