@@ -31,8 +31,8 @@ let express 		= require("express"),
 
 //DATABASE CONFIG========================================
 // mongoose.connect("mongodb://localhost:27017/yelp_camp",
-mongoose.connect('mongodb://localhost:27017/new_thing',
-// mongoose.connect('mongodb+srv://BaamAhmed:aurparho@aurparho.seqhs.mongodb.net/aurparho?retryWrites=true&w=majority',
+// mongoose.connect('mongodb://localhost:27017/new_thing',
+mongoose.connect('mongodb+srv://BaamAhmed:aurparho@aurparho.seqhs.mongodb.net/aurparho?retryWrites=true&w=majority',
 	{
 	useNewUrlParser: true,
 	useUnifiedTopology: true
