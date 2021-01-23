@@ -26,9 +26,7 @@
 			
 			<p class="segmentPara mt-3">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
 			<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
-			<% if (note.videoLink != undefined && note.videoLink != ""){ %>
-				<a style="margin-top: 25px !important;" class="m-0 videoButton p-4 d-flex justify-content-center" href="<%= note.videoLink %>" target="_blank" rel="noopener noreferrer">Video explanation</a>
-			<% } %>
+			
 		</div>
 	</div>
 	<div class="row px-3 align-content-center">
@@ -41,6 +39,17 @@
 	<form class="deleteForm" action="/notes/<%=note._id%>?_method=DELETE" method="POST">
 		<input class="btn btn-xs btn-danger" value="Delete" type="submit">	
 	</form>
+<% } %>
+
+
+<% if (note.videoLink != undefined && note.videoLink != ""){ %>
+	<div class="mainSegment container p-5" >
+		<h1 class="segmentHeading"><span class="emph">EXPLANATION</span> VIDEO</h1>
+		<div class="wrapper mb-3">
+			<iframe style="border-radius: 20px; margin-bottom: 20px;" src="https://www.youtube.com/embed/<%=note.videoLink%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCMNt3OYNFe-bYcCT_a1g86w" class="d-flex justify-content-center p-3 videoButton" style="margin:0 !important;">SUBSCRIBE ON YOUTUBE</a>
+	</div>
 <% } %>
 
 <div class="container mainSegment  p-lg-5 p-4">
