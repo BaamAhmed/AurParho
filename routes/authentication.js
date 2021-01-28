@@ -2,11 +2,13 @@ let express = require("express"),
 	router 	= express.Router(),
 	passport= require("passport"),
 	User	= require("../models/user"),
+	Note	= require("../models/note")
 	middleware = require("../middleware/index");
 
 
 router.get("/", function(req,res){
 	res.redirect("notes")
+	
 })
 
 // router.get("/register", function(req, res){
