@@ -2,26 +2,14 @@
 <div style="border: 4px solid #E3BE29" class="mainSegment p-5 container">
 	<h1 style="text-align: center;" class="segmentHeading">Welcome to <span class="emph">AurParho</span></h1>
 </div>
-<div style="border: 4px solid #ed3e32" class="container mainSegment p-5 pt-0" >
-	<div class="row" >
-		<div class="col-12 d-flex d-md-none p-0 mb-4 d-flex justify-content-center" >
-			<img src="https://i.ibb.co/JkSY89v/Artboard-4.png" class="jumboPic" calt="">
-		</div>
-		<div class="col-12 col-md-7 p-0" >
-			<div class="col-12" >
-				<h1 class="segmentHeading" >Introducing <span class="video" >Video Explanations</span></h1>	
-			</div>
-			<div class="col-8-sm col-12" >
-				<p class="segmentPara" >Because sometimes, even pretty notes aren't enough. These videos, oriented specifically to people utilizing the notes on this website, will provide a <span class="video"> more engaging and comprehensive experience. </span></p>
-				<p class="segmentPara" >Notes with video explanations have <span class="video"> red borders</span>, and the video can be found embedded on the note page. Alternatively, you could browse our <span class="video"> YouTube channel.</span></p>
-			</div>
-		</div>
-		<div class="col-5 p-0 m-0 d-none d-md-flex justify-content-end" >
-			<img src="https://i.ibb.co/JkSY89v/Artboard-4.png" class="jumboPic marginManagement my-5" calt="">
-		</div>
-		<div class="col-8-sm col-12 jumboButton" style="margin-top: -30px;" >
-			<a href="https://www.youtube.com/channel/UCMNt3OYNFe-bYcCT_a1g86w" style="background-color: #ed3e32;" class="jumboLink p-3 px-4" >BROWSE CHANNEL</a>
-		</div>
+
+<div class="container mainSegment p-5">
+	<h1 class="segmentHeading mb-4" >Any topics troubling <span class="emph" >you</span>  today?</h1>
+	<div class="row " >
+		<form id="searchSecondary" action="/notes/browse" method="GET">
+			<input type="text" placeholder="Search for a topic" name="searchTerm" class="notMainSearch">
+			<input type="submit" class="notMainSearchButton">
+		</form>
 	</div>
 </div>
 
@@ -29,16 +17,9 @@
 
 
 
-<div class="container mainSegment p-5">
-	<h1 class="segmentHeading">What's new in <span class="emph">v1.2</span>:</h1>
-	<ul class="segmentPara">
-		<li>Introduced video explanations for particular notes and many more coming soon</li>
-		<li><span class="emph">[v1.2.1] </span> Videos are now embedded into each note's individual page instead of being YouTube links</li>
-		<li>Added ability to click on note thumbnail instead of having to click on only the name</li>
-		<li>Removed jumbotron slider, in favor of a static "Welcome to AurParho" message</li>
-		<li>Notes on browse page are now sorted from most recent to oldest uploads</li>
-	</ul>
-</div>
+
+
+
 
 <div style="border: 4px solid #64c0f5" class="container mainSegment p-5 pt-0" >
 	<h1 style="color: #64c0f5;" class="segmentHeading">Need help with O lvl CS?</h1>
@@ -126,15 +107,7 @@
 </div>
 
 
-<div class="container mainSegment p-5">
-	<h1 class="segmentHeading mb-4" >Any topics troubling <span class="emph" >you</span>  today?</h1>
-	<div class="row " >
-		<form id="searchSecondary" action="/notes/browse" method="GET">
-			<input type="text" placeholder="Search for a topic" name="searchTerm" class="notMainSearch">
-			<input type="submit" class="notMainSearchButton">
-		</form>
-	</div>
-</div>
+
 
 <div class="container mainSegment p-5" >
 	<h1 class="segmentHeading " > Something we may have <span class="emph" >missed</span>? </h1>
