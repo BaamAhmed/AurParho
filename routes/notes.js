@@ -13,7 +13,7 @@ router.get("/", function(req, res){
 		if(err){
 			console.log("error encountered")
 		} else {
-			res.render("notes/index", {notes: allNotes})
+			res.render("notes/index", {notes: allNotes, nonNotePage: true})
 		}
 	})
 })
@@ -24,10 +24,10 @@ function stringEscape(s) {
 }
 
 router.get("/contactus", function(req, res) {
-	res.render("notes/contactform")
+	res.render("notes/contactform", {nonNotePage: true})
 })
 router.get("/requestnote", function(req, res) {
-	res.render("notes/requestnote")
+	res.render("notes/requestnote", {nonNotePage: true})
 })
 
 router.get("/browse", function(req, res){
@@ -50,7 +50,7 @@ router.get("/browse", function(req, res){
 			console.log("error encountered")
 			console.log(err)
 		} else {
-			res.render("notes/browse", {notes: allNotes, resultsFor: sanitisedSearch})
+			res.render("notes/browse", {notes: allNotes, resultsFor: sanitisedSearch, nonNotePage: true})
 		}
 	})
 })
@@ -116,7 +116,7 @@ router.get("/:id", function(req, res){
 					} else {
 						n = relatedNotes.length
 					}
-					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n, specialTitle: specialTitle})
+					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n, specialTitle: specialTitle, nonNotePage: false})
 				}
 			})
 		} 
@@ -135,10 +135,10 @@ router.get("/:id/edit", middleware.isLoggedIn, function(req, res){
 			if (foundNote.videoLink != undefined && foundNote.videoLink != "")
 			{
 				let videoLinkBool = true
-				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool})
+				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool, nonNotePage: true})
 			} else {
 				let videoLinkBool = false
-				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool})
+				res.render("notes/edit", {note: foundNote, videoLinkBool: videoLinkBool, nonNotePage: true})
 			}
 		}
 	})

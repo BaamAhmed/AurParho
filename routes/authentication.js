@@ -34,11 +34,11 @@ router.get("/", function(req,res){
 
 
 router.get("/superSpecialLogin", function(req, res){
-	res.render("login")
+	res.render("login", {nonNotePage: true})
 })
 
 router.get("/about", function(req, res){
-	res.render("about")
+	res.render("about", {nonNotePage: true})
 })
 
 router.post("/login", passport.authenticate("local", 

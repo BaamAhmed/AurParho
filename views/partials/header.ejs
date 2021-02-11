@@ -31,7 +31,13 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
-		<title>AurParho | The Notes Central</title>
+		<title>
+		<% if (!(nonNotePage)) { %>
+			<%= note.title %>
+		<% } else { %>
+			AurParho | The Notes Central
+		<% } %>
+			</title>
 		<link rel="stylesheet" href="/stylesheets/main.css">
 		<link rel="stylesheet" href="/stylesheets/show.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
