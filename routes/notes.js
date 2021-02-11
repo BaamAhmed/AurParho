@@ -58,7 +58,7 @@ router.get("/browse", function(req, res){
 
 //NEW CAMPGROUND FORM
 router.get("/new", middleware.isLoggedIn, function(req, res){
-	res.render("notes/new")
+	res.render("notes/new", {nonNotePage: true})
 })
 
 //NEW CAMPGROUND FORM POST REQUEST
