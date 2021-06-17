@@ -33,7 +33,7 @@ router.get("/getrecent", (req, res)=> {
 	})
 })
 
-
+//s
 function stringEscape(s) {
 	return s ? s.replace(/\\/g,'').replace(/\{\}/g,'').replace(/\[\]/g,'').replace(/\+/g,'').replace(/\n/g,'').replace(/\t/g,'').replace(/\v/g,'').replace(/'/g,"").replace(/"/g,'').replace(/[\x00-\x1F\x80-\x9F]/g,hex) : s;
 	function hex(c) { var v = '0'+c.charCodeAt(0).toString(16); return '\\x'+v.substr(v.length-2); }
