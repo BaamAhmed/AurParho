@@ -16,7 +16,8 @@ let express 		= require("express"),
 //ROUTES IMPORTS ========================================
 	// commentRoutes	= require("./routes/comments"),
 	noteRoutes		= require("./routes/notes"),
-	authRoutes		= require("./routes/authentication");
+	authRoutes		= require("./routes/authentication"),
+	apiRoutes		= require("./routes/api")
 //=======================================================
 
 
@@ -44,6 +45,7 @@ mongoose.connect('mongodb+srv://BaamAhmed:aurparho@aurparho.seqhs.mongodb.net/au
 
 //APP CONFIG ============================================
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
@@ -87,6 +89,7 @@ app.use(flash());
 
 	//USING REFACTORED ROUTES ===========================
 	app.use(authRoutes);
+	app.use("/api", apiRoutes);
 	app.use("/notes", noteRoutes);
 	// app.use("/campgrounds/:id/comments", commentRoutes)
 	app.use(function(req, res, next){
