@@ -66,7 +66,7 @@ router.post("/search", (req, res)=> {
 router.get('/getannouncements', (req, res)=> {
 	let announcements= [
 		{
-			text: "It's an app now! AurParho is now a native app available on the App Store and Google Play Store, and not just on the web anymore! This new app features a nicer design, and soon, newer features like forums and past papers as well, so look out for those!"
+			text: "It's an app now! AurParho is now a native app available on the App Store, and not just on the web anymore! This new app features a nicer design, and soon, newer features like forums and past papers as well, so look out for those!"
 		},
 		{
 			text: "Videos! Some notes now have explanatory videos. If a note has an available video, you'll see a 'Watch Video' option alongside the download option."
