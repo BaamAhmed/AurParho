@@ -26,7 +26,7 @@ router.get("/", function(req, res){
 		if(err){
 			console.log("error encountered")
 		} else {
-			res.render("notes/index", {notes: allNotes, nonNotePage: true, files: files})
+			res.render("notes/index", {notes: allNotes, nonNotePage: true})
 		}
 	})
 })
