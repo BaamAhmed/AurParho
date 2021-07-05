@@ -3,8 +3,21 @@ let express = require("express"),
 	router 	= express.Router(),
 	Note = require("../models/note"),
 	middleware = require("../middleware/index")
+	fs = require('fs')
+	path = require('path')
+	formidable = require('formidable')
 
 
+
+const dirPath = path.join(__dirname, '../', "public/documents");
+
+
+const files = fs.readdirSync(dirPath).map(name => {
+	return {
+	name: path.basename(name, ".pdf"),
+	url: `/documents/${name}`
+	};
+});
 
 //ALL NOTES
 router.get("/", function(req, res){
@@ -13,7 +26,7 @@ router.get("/", function(req, res){
 		if(err){
 			console.log("error encountered")
 		} else {
-			res.render("notes/index", {notes: allNotes, nonNotePage: true})
+			res.render("notes/index", {notes: allNotes, nonNotePage: true, files: files})
 		}
 	})
 })
@@ -61,9 +74,27 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 	res.render("notes/new", {nonNotePage: true})
 })
 
+router.post('/upload', (req, res, next)=> {
+	const form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files){
+  
+        var oldPath = files.fileName.path;
+        var newPath = path.join(__dirname, '../public/documents')
+                + '/'+files.fileName.name
+        var rawData = fs.readFileSync(oldPath)
+      
+        fs.writeFile(newPath, rawData, function(err){
+            if(err) console.log(err)
+            return res.send("Successfully uploaded")
+        })
+  })
+})
+
 //NEW CAMPGROUND FORM POST REQUEST
 router.post("/", middleware.isLoggedIn, function(req, res){
-    let newNote = req.body.note;
+    // let newNote = req.body.note;
+	// newNote.fileName = req.body.fileName
+	// console.log(newNote.fileName)
 	// let name = req.body.name;
 	// let imageURL = req.body.image;
 	// let campDesc = req.body.campDesc;
@@ -72,17 +103,44 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 	// let newCampground = {name: name, image: imageURL, description: campDesc, poster: poster, price: price};
 	// campgrounds.push(newCampground)
 	//instead create new campground and save to database
-	Note.create(newNote, function(err, newlyCreated){
-		if(err){
-			console.log("error encountered");
-			console.log(err)
-		} else {
-			req.flash("success", "New note added successfully!")
-			console.log("everything running smoothly")
-			res.redirect("/notes")
-		}
+	const form = new formidable.IncomingForm();
+	form.parse(req, function(err, fields, files){
+
+		console.log(fields)
+		fields.fileName = files.actualFile.name
+		var oldPath = files.actualFile.path;
+		var newPath = path.join(__dirname, '../public/documents')
+				+ '/'+files.actualFile.name
+		var rawData = fs.readFileSync(oldPath)
+	
+		fs.writeFile(newPath, rawData, function(err){
+			if(err) console.log(err)
+			Note.create(fields, function(err, newlyCreated){
+				if(err){
+					console.log("error encountered");
+					console.log(err)
+				} else {
+					console.log("everything running smoothly")
+					return res.redirect("/notes")
+					// req.flash("success", "New note added successfully!")
+				}
+			})
+			
+			// return res.send("Successfully uploaded")
+		})
 	})
+	// Note.create(newNote, function(err, newlyCreated){
+	// 	if(err){
+	// 		console.log("error encountered");
+	// 		console.log(err)
+	// 	} else {
+			
+	// 		// req.flash("success", "New note added successfully!")
+			
+	// 	}
+	// })
 })
+
 
 
 //ONE PARTICULAR CAMPGROUND
@@ -146,13 +204,36 @@ router.get("/:id/edit", middleware.isLoggedIn, function(req, res){
 
 //update campground route
 router.post("/:id/edit", middleware.isLoggedIn , function(req, res){
-	Note.findByIdAndUpdate(req.params.id, req.body.note, function(err, updatedNote){
-		if(err){
-			console.log("The following error was encountered: " + err)
-		} else {
-			res.redirect("/notes/" + req.params.id)
-		}
+	const form = new formidable.IncomingForm();
+	form.parse(req, function(err, fields, files){
+
+		console.log(fields)
+		fields.fileName = files.actualFile.name
+		var oldPath = files.actualFile.path;
+		var newPath = path.join(__dirname, '../public/documents')
+				+ '/'+files.actualFile.name
+		var rawData = fs.readFileSync(oldPath)
+	
+		fs.writeFile(newPath, rawData, function(err){
+			if(err) console.log(err)
+			Note.findByIdAndUpdate(req.params.id, fields, function(err, updatedNote){
+				if(err){
+					console.log('The following error was encountered: ', err)
+				} else {
+					res.redirect('/notes/'+ req.params.id)
+				}
+			})
+			// return res.send("Successfully uploaded")
+		})
 	})
+
+	// Note.findByIdAndUpdate(req.params.id, req.body.note, function(err, updatedNote){
+	// 	if(err){
+	// 		console.log("The following error was encountered: " + err)
+	// 	} else {
+	// 		res.redirect("/notes/" + req.params.id)
+	// 	}
+	// })
 })
 
 router.delete("/:id", middleware.isLoggedIn, function(req, res){

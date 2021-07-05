@@ -5,31 +5,47 @@
 			Create a new campground
 		</h1>
 		<div style="width: 30%; margin: 0 auto;">
-			<form action="/notes" method="POST">
+			<form action="/notes" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="title" name="note[title]">
+					<input class="form-control" type="text" placeholder="title" name="title">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="image url" name="note[image]">
+					<input class="form-control" type="text" placeholder="image url" name="image">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="grade" name="note[grade]">
+					<input class="form-control" type="text" placeholder="grade" name="grade">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="contributor" name="note[contributor]">
+					<input class="form-control" type="text" placeholder="contributor" name="contributor">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="the note link" name="note[noteLink]">
+					<input class="form-control" type="text" placeholder="the note link" name="noteLink">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="video link" name="note[videoLink]">
+					<input class="form-control" type="text" placeholder="video link" name="videoLink">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="subject" name="note[subject]">
+					<input class="form-control" type="text" placeholder="subject" name="subject">
 				</div>
+				<div class="form-group">
+					<input id="actualFile" class="form-control" type="file" placeholder="file" name="actualFile">
+				</div>
+				<!-- <div class="form-group">
+					<input id="fileName" class="form-control" type="text" placeholder="fileName" name="fileName">
+				</div> -->
 				<div class="form-group">
 					<button class="btn btn-primary btn-md btn-block">Submit!</button>
 				</div>
+			</form>
+
+			<form action="/notes/upload" method="post" enctype="multipart/form-data">
+				<p>
+				<input type="text" placeholder="title" name="note[title]">
+
+				<label for="my_upload">Select the file to upload:</label>
+				<input id="my_upload" name="fileName" type="file">
+				</p>
+				<input type="submit" value="Upload Now">
 			</form>
 			<a href="/campgrounds">View All Campgrounds</a>
 		</div>

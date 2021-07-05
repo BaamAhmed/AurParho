@@ -5,26 +5,29 @@
 			Edit <%=note.title%>
 		</h1>
 		<div style="width: 30%; margin: 0 auto;">
-			<form action="/notes/<%= note._id%>/edit" method="POST">
+			<form action="/notes/<%= note._id%>/edit" method="POST" enctype="multipart/form-data">
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="title" name="note[title]" value="<%=note.title%>">
+					<input class="form-control" type="text" placeholder="title" name="title" value="<%=note.title%>">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="image url" name="note[image]" value="<%= note.image %>">
+					<input class="form-control" type="text" placeholder="image url" name="image" value="<%= note.image %>">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" placeholder="grade" name="note[grade]" value="<%=note.grade%>">
+					<input class="form-control" type="text" placeholder="grade" name="grade" value="<%=note.grade%>">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="note[noteLink]" value="<%=note.noteLink%>">
+					<input class="form-control" type="text" name="noteLink" value="<%=note.noteLink%>">
 				</div>
 				
-					<div class="form-group">
-						<input class="form-control" type="text" name="note[videoLink]" value="">
-					</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="videoLink" value="">
+				</div>
 				
 				<div class="form-group">
-					<input class="form-control" type="text" name="note[subject]" value="<%=note.subject%>">
+					<input class="form-control" type="text" name="subject" value="<%=note.subject%>">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="file" name="actualFile">
 				</div>
 				<div class="form-group">
 					<button class="btn btn-primary btn-md btn-block">Submit!</button>

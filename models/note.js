@@ -13,7 +13,8 @@ let noteSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-    }
+    },
+    fileName: String
 })
 
 let Note = mongoose.model("Note", noteSchema)
