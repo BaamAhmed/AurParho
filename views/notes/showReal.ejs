@@ -38,7 +38,7 @@
 			
 			<p class="segmentPara mt-3">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
 			<% if (note.fileName){ %>
-				<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="/documents/<%= note.fileName %>" target="_blank" rel="noopener noreferrer">Download</a>
+				<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="https://aurparhobucket.s3.ap-south-1.amazonaws.com/notes/<%= note.fileName %>" target="_blank" rel="noopener noreferrer">Download</a>
 			<% } else { %>
 				<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
 			<% } %>
