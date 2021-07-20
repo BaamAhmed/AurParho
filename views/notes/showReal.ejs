@@ -1,6 +1,6 @@
 <%- include ("../partials/header") %> 
 
-<div style="display: flex; text-align: center; justify-content: center; padding-bottom: 20px;">
+<!-- <div style="display: flex; text-align: center; justify-content: center; padding-bottom: 20px;">
 	<script type="text/javascript">
 		atOptions = {
 			'key' : '94b9b1aa218da5f8873474048abdaf1e',
@@ -12,7 +12,7 @@
 		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.variouscreativeformats.com/94b9b1aa218da5f8873474048abdaf1e/invoke.js"></scr' + 'ipt>');
 	</script>
 
-</div>
+</div> -->
 
 <div class="container mainSegment p-md-4 p-lg-5 p-3">
 	<div class="row px-4 mb-4">
@@ -38,6 +38,7 @@
 			
 			<p class="segmentPara mt-3">Having difficulty understanding something? Don't worry, it happens to the best of us. Just kick back, clear your mind, and go through this note and know this: all you can do is try your best. Whatever happens afterwards... well, it's gonna happen regardless. Happy studying!</p>
 			<% if (note.fileName){ %>
+
 				<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="https://aurparhobucket.s3.ap-south-1.amazonaws.com/notes/<%= note.fileName %>" target="_blank" rel="noopener noreferrer">Download</a>
 			<% } else { %>
 				<a class="mt-4 mb-0 downloadButton p-4 d-flex justify-content-center" href="<%= note.noteLink %>" target="_blank" rel="noopener noreferrer">Download</a>
@@ -57,7 +58,7 @@
 	</form>
 <% } %>
 
-<div style="display: flex; text-align: center; justify-content: center; padding-bottom: 20px;">
+<!-- <div style="display: flex; text-align: center; justify-content: center; padding-bottom: 20px;">
 	<script type="text/javascript">
 		atOptions = {
 			'key' : '94b9b1aa218da5f8873474048abdaf1e',
@@ -69,7 +70,7 @@
 		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.variouscreativeformats.com/94b9b1aa218da5f8873474048abdaf1e/invoke.js"></scr' + 'ipt>');
 	</script>
 
-</div>
+</div> -->
 
 <% if (note.videoLink != undefined && note.videoLink != ""){ %>
 	<div class="mainSegment container p-md-4 p-lg-5 p-3" >

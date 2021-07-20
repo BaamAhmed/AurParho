@@ -143,9 +143,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 
 
 
-//ONE PARTICULAR CAMPGROUND
+//ONE PARTICULAR NOTE
 router.get("/:id", function(req, res){
-	//find the campground with provided ID
+	//find the note with provided ID
 	Note.findById(req.params.id).populate("comments").exec(function(err, foundNote){
 		if(err){
 			console.log("error encountered")
@@ -173,6 +173,9 @@ router.get("/:id", function(req, res){
 						n = 4
 					} else {
 						n = relatedNotes.length
+					}
+					if (foundNote.fileName.indexOf(' + ') !== -1){
+						foundNote.fileName = foundNote.fileName.replace(' + ', '+%2B+')
 					}
 					res.render("notes/showReal", {note: foundNote, relatedNotes: relatedNotes, n:n, specialTitle: specialTitle, nonNotePage: false})
 				}
